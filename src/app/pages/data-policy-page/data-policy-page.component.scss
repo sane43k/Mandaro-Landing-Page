@@ -1,0 +1,66 @@
+@use "../../../assets/styles/vars" as *;
+@use "../../../assets/styles/mixins" as *;
+
+.data-policy-section {
+    width: 100%;
+    padding: 140px 0 80px;
+    @include mobileOnly {
+        padding: 40px 0 80px;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        @include mobileOnly {
+            padding: 0;
+            gap: 30px; 
+            .h1-55pt {
+                padding: 0 15px;
+            }
+        }
+        .content-wrapper {
+            background-color: $neutral-3;
+            border-radius: 24px;
+            padding: 60px;
+            @include mobileOnly {
+                border-radius: 16px;
+                padding: 40px 15px;
+            }
+            .h2-48pt {
+                margin-bottom: 24px;
+            }
+            .h3-32pt {
+                margin-bottom: 12px;
+            }
+            .paragraph-wrapper {
+                &:not(:last-child) {
+                    margin-bottom: 24px;
+                }
+            }
+            p {
+                &:not(:last-child) {
+                    margin-bottom: 12px;
+                }
+                &[class="text-bold text-bold-pt18"] {
+                    color: $neutral-7;
+                }
+            }
+            .list {
+                color: $neutral-5;
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                padding-left: 20px;
+                margin-bottom: 24px;
+                &__item {
+                    list-style-type: disc;
+                }
+            }
+            @include mobileOnly {
+                .link-pt16 {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

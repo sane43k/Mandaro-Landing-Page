@@ -1,0 +1,64 @@
+@use "../../../../../assets/styles/vars" as *;
+@use "../../../../../assets/styles/mixins" as *;
+
+.field-wrapper {
+    min-height: 54px;
+    width: 100%;
+    background-color: $neutral-1;
+    border: 1px solid $neutral-3;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: border .2s ease;
+    @include mobileOnly {
+        padding: 18px 16px;
+    }
+    &:hover {
+        border: 1px solid $neutral-4;
+    }
+    &:focus-within {
+        caret-color: $accent-9;
+        border: 1px solid $accent-9;
+    }
+    &.error {
+        caret-color: $accent-8;
+        border: 1px solid $accent-8;
+        margin-bottom: 20px;
+        transition: all .1s ease;
+        @include mobileOnly {
+            margin-bottom: 17px;   
+        }
+    }
+    input {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 130%;
+        color: $neutral-5;
+        height: 100%;
+        width: 100%;    
+        background-color: $neutral-1;
+        border: none;
+        outline: none;
+        padding: 0;
+        @include mobileOnly {
+            font-size: 14px;
+        }
+        &::placeholder {
+            color: $neutral-4;
+        }
+    }
+    .error-message {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 130%;
+        color: $accent-8;
+        position: absolute;
+        top: 58px;
+        right: 0;
+        @include mobileOnly {
+            font-size: 12px;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+<div 
+    class="field-wrapper"
+    [ngClass]="{'error': inputModel.dirty && inputModel.invalid && inputFocused}"
+>
+    <input 
+        [placeholder]="placeholder"
+        [type]="type"
+        [(ngModel)]="value"
+        (input)="handleInput($event)"
+        (blur)="onTouched(); inputFocused = false"
+        (focus)="inputFocused = true"
+        #inputModel="ngModel"
+        required
+        minlength="2"
+        maxlength="400"
+    >
+    <span 
+        class="error-message" 
+        *ngIf="inputModel.dirty && inputModel.errors && inputFocused"
+    >
+        <ng-container *ngIf="inputModel.errors['required']">
+            This field is required
+        </ng-container>
+        <ng-container *ngIf="inputModel.errors['minlength']">
+            Minimum 2 characters required
+        </ng-container>
+        <ng-container *ngIf="inputModel.errors['maxlength']">
+            Maximum 400 characters allowed
+        </ng-container>
+    </span>
+</div>

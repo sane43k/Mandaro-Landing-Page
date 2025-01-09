@@ -1,0 +1,22 @@
+@use "../../../assets/styles/mixins" as *;
+
+:host {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    gap: 140px;
+    @include mobileOnly {
+        gap: 80px;
+    }
+    app-main {
+        margin-top: 80px;
+        @include mobileOnly {
+            margin-top: 40px;
+        }
+    }
+    app-contact-form {
+        margin-bottom: 80px;
+    }
+}

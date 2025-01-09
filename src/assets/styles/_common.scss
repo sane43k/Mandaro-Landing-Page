@@ -1,0 +1,135 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Manrope, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
+    color: $neutral-7;
+    background-color: $neutral-1;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    max-width: 1270px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+h1,.h1-55pt {
+    font-size: 55px;
+    font-weight: 500;
+    line-height: 130%;
+    @include mobileOnly {
+        font-size: 34px;
+    }
+}
+
+h2,.h2-48pt {
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 130%;
+    @include mobileOnly {
+        font-size: 24px;
+    }
+}
+
+h3,.h3-32pt {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 130%;
+    @include mobileOnly {
+        font-size: 22px;
+        font-weight: 600;
+    }
+}
+
+h4,.h4-28pt {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 130%;
+    @include mobileOnly {
+        font-size: 20px;
+    }
+}
+
+p {
+    color: $neutral-5;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 130%;
+    margin: 0;
+    @include mobileOnly {
+      font-size: 14px;
+    }
+}
+
+.text {
+    font-weight: 400;
+    line-height: 130%;
+    &-pt20 {
+      font-size: 20px;
+      @include mobileOnly {
+        font-size: 12px;
+      }
+    }
+    &-pt18 {
+      font-size: 18px;
+      @include mobileOnly {
+        font-size: 12px;
+      }
+    }
+    &-pt16 {
+        font-size: 16px;
+        @include mobileOnly {
+            font-size: 14px;
+        }
+    }
+    &-pt14 {
+      font-size: 14px;
+    }
+    &-pt12 {
+      font-size: 12px;
+    }
+}
+
+.text-bold {
+    font-weight: 500;
+    line-height: 130%;
+    &-pt18 {
+        font-size: 18px;
+        @include mobileOnly {
+            font-size: 16px;
+        }
+    }
+}
+
+ul, ol, ul li, ol li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    height: 38px;
+    width: 130px;
+    @include mobileOnly {
+        height: 24px;
+        width: 82px;
+    }
+}

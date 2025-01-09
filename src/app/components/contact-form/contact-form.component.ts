@@ -1,0 +1,100 @@
+import { Component, OnDestroy } from '@angular/core';
+import { SimpleInputComponent } from "../ui-kit/form-controls/simple-input/simple-input.component";
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NgIf } from '@angular/common';
+import { Subscription } from 'rxjs';
+
+@Component({
+  selector: 'app-contact-form',
+  standalone: true,
+  imports: [
+    SimpleInputComponent,
+    ReactiveFormsModule,
+    NgIf
+],
+  templateUrl: './contact-form.component.html',
+  styleUrl: './contact-form.component.scss'
+})
+export class ContactFormComponent implements OnDestroy {
+  form: FormGroup;
+  private valueChangesSubscription: Subscription;
+
+  _currentStep: number = 1;
+  
+  set currentStep(value: number) {
+    this._currentStep = value;
+  }
+
+  get currentStep(): number {
+    return this._currentStep;
+  }
+
+  _isStepInvalid: boolean = true;
+
+  set isStepInvalid(value: boolean) {
+      this._isStepInvalid = value;
+  }
+
+  get isStepInvalid(): boolean {
+    return this._isStepInvalid;
+  }
+
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      step1: this.fb.group({
+        name: ['', Validators.required],
+        tel: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]]
+      }),
+      step2: this.fb.group({
+        service: ['', Validators.required]
+      }),
+      step3: this.fb.group({
+        comment: [''],
+        agreement: [''],
+        check: ['', Validators.required]
+      })
+    });
+
+    this.valueChangesSubscription = this.form.valueChanges.subscribe({
+      next: () => this.checkValidation()
+    });
+  }
+
+  checkValidation() {
+    const stepKey = `step${this.currentStep}`;
+    this.isStepInvalid = this.form.get(stepKey)?.invalid || false;
+  }
+
+  onChangeStep(key: string) {
+    switch (key) {
+      case 'next':
+        if(this.currentStep < 3) {
+          this.currentStep++;
+        }
+        break;
+      case 'prev':
+        this.currentStep--;
+        break;  
+    }
+    this.checkValidation();
+  }
+
+  onSubmit() {
+    this.currentStep = 4;
+    if (this.form.valid) {
+      console.log(this.form.value)
+    }
+    setTimeout(() => {
+      this.form.reset();
+      this.currentStep = 1;
+      this.checkValidation();
+    }, 3000);
+  }
+
+  ngOnDestroy(): void {
+    if (this.valueChangesSubscription) {
+      this.valueChangesSubscription.unsubscribe();
+    }
+  }
+}

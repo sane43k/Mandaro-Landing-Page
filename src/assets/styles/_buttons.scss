@@ -1,0 +1,170 @@
+.btn {
+    font-family: Manrope;
+    font-weight: 600;
+    line-height: 130%;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .2s linear;
+    &-pt20 {
+        font-size: 20px;
+        @include mobileOnly {
+            font-size: 14px;
+        }
+    }
+    &-pt18 {
+        font-size: 18px;
+        @include mobileOnly {
+            font-size: 14px;
+        }
+    }
+    &-primary {
+        width: 100%;
+        color: $neutral-1;
+        background-color: $accent-9;
+        border-color: transparent;
+        border-radius: 12px;
+        padding: 19px 10px;
+        @include mobileOnly {
+            padding: 17px 10px;
+        }
+        &.btn-communicate {
+            width: initial;
+            padding: 16px 36px;
+            @include mobileOnly {
+                width: 100%;
+                padding: 12px 10px;
+            }
+            &-small {
+                padding: 9px 36px;
+                @include mobileOnly {
+                    width: 100%;
+                    padding: 12px 10px;
+                }
+            }
+            span {
+                display: flex;
+                align-items: center;
+                &::after {
+                    content: url(../images/icons/arrow-right_white_32x32.svg);
+                    height: 32px;
+                    width: 32px;
+                    padding-left: 10px;
+                    @include mobileOnly {
+                        content: url(../images/icons/arrow-right_white_28x28.svg);
+                        height: 28px;
+                        width: 28px;     
+                    }
+                }
+            }
+        }
+        // span {
+        //     display: flex;
+        //     align-items: center;
+        //     &::after {
+        //         content: url(../images/icons/loading_white_32x32.svg);
+        //         height: 32px;
+        //         width: 32px;
+        //         padding-left: 10px;
+        //     }
+        // }
+        &:hover {
+            background-color: $accent-10;
+        }
+        &:active {
+            background-color: $accent-11;
+        }
+        &:focus {
+            outline: none;
+            border: 2px solid $neutral-7;
+        }
+        &:disabled {
+            opacity: 0.55;
+        }
+    }
+    &-secondary {
+        width: 50px;
+        height: 50px;
+        background-color: $neutral-1;
+        border: 1px solid $neutral-4;
+        border-radius: 50%;
+        &::after {
+            content: url(../images/icons/caret-down_black_32x32.svg);
+            height: 32px;
+            width: 32px;
+        }
+        &:hover {
+            background-color: $neutral-2;
+        }
+        &:active {
+            background-color: $neutral-3;
+        }
+        &:focus {
+            border: 2px solid $neutral-7;
+        }
+        &:disabled {
+            opacity: 0.55;
+        }
+    }
+}
+
+.burger-btn {
+    height: 32px;
+    width: 32px;
+    background-color: transparent;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    @include mobileOnly {
+        display: flex;
+    }
+    %burger {
+        height: 2px;
+        width: 24px;
+        background-color: $neutral-7;
+        border-radius: 20px;
+        display: block;
+    }
+    span {
+        @extend %burger;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 7px;
+            @extend %burger;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 7px;
+            @extend %burger;
+        }
+    }
+    &.show {
+        %cross {
+            width: 100%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            transition: all .3s ease-in-out;
+        }
+        span {
+            background-color: transparent;
+            &::before {
+                transform: rotate(-45deg);
+                @extend %cross;
+            }
+            &::after {
+                transform: rotate(45deg);
+                @extend %cross;
+            }
+        }
+    }
+}

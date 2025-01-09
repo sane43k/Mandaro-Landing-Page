@@ -1,0 +1,54 @@
+<footer class="footer-section">
+    <div class="container">
+        <div class="images-wrapper">
+            <div class="logo-wrapper">
+                <a routerLink="">
+                    <img
+                        src="/assets/images/logos/logo_bw.svg"
+                        class="logo"
+                        alt="Mandaro Logo"
+                    >
+                </a>
+            </div>
+            <app-social-media [isFooter]="true"></app-social-media>
+        </div>
+        <div class="links-wrapper">
+            <div class="contact-wrapper">
+                <a
+                    href="mailto:service@mandaro-digital.de"
+                    class="link link-white text text-pt16"
+                    target="_blank"
+                >
+                    service&#64;mandaro-digital.de
+                </a>
+                <div class="separator"></div>
+                <a
+                    href="tel:0303251330"
+                    class="link link-white text text-pt16"
+                    target="_blank"
+                >
+                    030 32 51 33 - 0
+                </a>
+                <div class="separator"></div>
+                <a
+                    href="https://www.google.com/maps?q=Eiswerderstr.+18,+13585+Berlin"
+                    class="link link-white text text-pt16"
+                    target="_blank"
+                >
+                    Eiswerderstr. 18 13585 Berlin
+                </a>
+            </div>
+            <div class="info-wrapper">
+                <a routerLink="data-policy" class="link link-white link-pt14">
+                    {{ isMobile ? 'Data policy' : 'Datenschützerklärung' }}
+                </a>
+                <a routerLink="imprint" class="link link-white link-pt14">
+                    {{ isMobile ? 'Imprint' : 'Impressum'}}
+                </a>
+                <a routerLink="agb" class="link link-white link-pt14">
+                    AGB
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>

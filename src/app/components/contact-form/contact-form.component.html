@@ -1,0 +1,151 @@
+<section class="contact-form-section" id="contact-form">
+  <div class="container">
+    <h2 class="h2-48pt">Kontaktieren Sie uns<br />und wir werden antworten</h2>
+    <div class="content-wrapper">
+      <form
+        class="form-wrapper"
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+      >
+        <div class="red-block">phase 1</div>
+        <h3 class="h3-32pt">Bitte füllen Sie das<br />Kontaktformular aus</h3>
+        <div
+          formGroupName="step1"
+          *ngIf="currentStep === 1"
+          class="input-wrapper"
+        >
+          <app-simple-input
+            type="text"
+            placeholder="Name*"
+            formControlName="name"
+          ></app-simple-input>
+          <app-simple-input
+            type="text"
+            placeholder="Telefonnummer*"
+            formControlName="tel"
+          ></app-simple-input>
+          <app-simple-input
+            type="email"
+            placeholder="Email*"
+            formControlName="email"
+          ></app-simple-input>
+        </div>
+        <div
+          formGroupName="step2"
+          *ngIf="currentStep === 2"
+          class="input-wrapper"
+        >
+          <select name="service" formControlName="service">
+            <option value="1">Webdesign & Grafik</option>
+            <option value="2">Entwicklung</option>
+            <option value="3">SEO</option>
+          </select>
+        </div>
+        <div
+          formGroupName="step3"
+          *ngIf="currentStep === 3"
+          class="input-wrapper"
+        >
+          <textarea name="" id="" formControlName="comment"></textarea>
+          <input type="checkbox" formControlName="agreement" />
+          <input type="text" formControlName="check" />
+        </div>
+
+        <div class="button-wrapper">
+          <button
+            type="button"
+            class="btn btn-primary btn-pt20"
+            *ngIf="currentStep !== 1 && currentStep !== 4"
+            (click)="onChangeStep('prev')"
+          >
+            Prev
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary btn-pt20"
+            *ngIf="currentStep < 3"
+            [disabled]="isStepInvalid"
+            (click)="onChangeStep('next')"
+          >
+            Next
+          </button>
+          <button
+            type="submit"
+            class="btn btn-primary btn-pt20"
+            *ngIf="currentStep === 3"
+            [disabled]="isStepInvalid"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+      
+      <div class="col-wrapper">
+        <h4 class="h4-28pt">Was passiert nach dem Absenden der Anfrage?</h4>
+        <ul class="step-list">
+          <li class="step-list__item">
+            <span class="counter">1</span>
+            <p class="description">
+              Ein Mitarbeiter kontaktiert Sie und bei Bedarf unterzeichnen wir
+              eine NDA.
+            </p>
+          </li>
+          <li class="step-list__item">
+            <span class="counter">2</span>
+            <p class="description">
+              Im gemeinsamen Briefing präzisieren wir Ihre Wünsche.
+            </p>
+          </li>
+          <li class="step-list__item">
+            <span class="counter">3</span>
+            <p class="description">
+              Wir erstellen einen Projektvorschlag mit Kostenschätzung mit
+              Zeitplan.
+            </p>
+          </li>
+        </ul>
+        <div class="mail-icon">
+          <svg
+            width="100%"
+            height="100%"
+            viewBox="0 0 400 300"
+            fill="none"
+          >
+            <path
+              d="M33.333 141.667C33.333 83.3333 66.6663 58.3333 116.666 58.3333H283.333C333.333 58.3333 366.666 83.3333 366.666 141.667V258.333C366.666 316.667 333.333 341.667 283.333 341.667H116.666"
+              stroke="#AE0F0A"
+              stroke-width="6"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M283.334 150L231.167 191.667C214 205.333 185.834 205.333 168.667 191.667L116.667 150"
+              stroke="#AE0F0A"
+              stroke-width="6"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M33.333 275H133.333"
+              stroke="#AE0F0A"
+              stroke-width="6"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M33.333 208.333H83.333"
+              stroke="#AE0F0A"
+              stroke-width="6"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

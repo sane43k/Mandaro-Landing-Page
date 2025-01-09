@@ -1,0 +1,45 @@
+.check {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    &__input {
+        appearance: none;
+    }
+    &__box {
+        height: 20px;
+        width: 20px;
+        background-color: $neutral-1;
+        border: 1px solid $neutral-4;
+        border-radius: 4px;
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+    }
+    &__input:checked + &__box {
+        background-image: url(../images/icons/checkbox_white_20x20.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: $accent-9;
+        border: 1px solid $neutral-7;
+    }
+    &__input:hover + &__box {
+        border-color: $neutral-5;
+    }
+    &__input:checked:hover + &__box {
+        border-color: transparent;
+        opacity: 0.8;
+    }
+    &__input:focus + &__box {
+        border: 2px solid $neutral-7;
+    }
+    &__input:checked:focus + &__box {
+        border: 2px solid $neutral-7;
+    }
+    &__input:disabled + &__box {
+        opacity: 0.45;
+    }
+    &__input:checked:disabled + &__box {
+        border-color: transparent;
+        opacity: 0.45;
+    }
+}

@@ -1,0 +1,40 @@
+.link {
+    font-weight: 400;
+    line-height: 130%;
+    text-decoration: none;
+    transition: all .2s linear;
+    &-pt16 {
+        font-size: 16px;
+        @include mobileOnly {
+            font-size: 18px;
+            line-height: 25px;
+        }
+    }
+    &-pt14 {
+        font-size: 14px;
+    }
+    &:hover {
+        text-decoration: underline;
+    }
+    &:hover:focus {
+        border: 1px solid $accent-9;
+        border-radius: 2px;
+    }
+    &-dark {
+        color: $neutral-7;
+        &:hover {
+            color: $neutral-6;
+        }
+    }
+    &-white {
+        color: $neutral-1;
+    }
+    &-orange {
+        color: $accent-9;
+    }
+    &-disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+        opacity: 0.55;
+    }
+}

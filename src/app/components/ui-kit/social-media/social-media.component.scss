@@ -1,0 +1,23 @@
+@use "../../../../assets/styles/vars" as *;
+
+.social-media-wrapper {
+    display: flex;
+    align-items: start;
+    gap: 28px;
+    a {
+        display: flex;
+        align-items: center;
+        .icon {
+            width: 24px;
+            height: 24px;
+            color: $neutral-4;
+            transition: all .3s ease-in-out;
+            &:hover {
+                color: $accent-9;
+            }
+            &-footer {
+                color: $neutral-1;
+            }
+        }
+    }
+}
