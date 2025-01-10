@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SimpleInputComponent } from "../ui-kit/form-controls/simple-input/simple-input.component";
+import { RedTagComponent } from '../ui-kit/red-tag/red-tag.component';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { Subscription } from 'rxjs';
@@ -10,6 +11,7 @@ import { WindowService } from '../../services/window.service';
   standalone: true,
   imports: [
     SimpleInputComponent,
+    RedTagComponent,
     ReactiveFormsModule,
     NgIf
   ],

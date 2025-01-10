@@ -41,9 +41,11 @@
                     width: 100%;
                 }
                 .h3-32pt {
+                    margin-top: 6px;
                     margin-bottom: 32px;
                     @include mobileOnly {
                         color: $neutral-6;
+                        margin-top: 12px;
                         margin-bottom: 24px;
                     }
                 }

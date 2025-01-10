@@ -1,0 +1,19 @@
+@import "../../../../assets/styles/vars";
+@import "../../../../assets/styles/mixins";
+
+.tag-wrapper {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    color: $neutral-1;
+    background-color: $accent-8;
+    border-radius: 12px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    @include mobileOnly {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}
