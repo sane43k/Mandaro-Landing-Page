@@ -1,8 +1,9 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SimpleInputComponent } from "../ui-kit/form-controls/simple-input/simple-input.component";
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { WindowService } from '../../services/window.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -11,16 +12,17 @@ import { Subscription } from 'rxjs';
     SimpleInputComponent,
     ReactiveFormsModule,
     NgIf
-],
+  ],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss'
 })
-export class ContactFormComponent implements OnDestroy {
+export class ContactFormComponent implements OnDestroy, OnInit {
   form: FormGroup;
   private valueChangesSubscription: Subscription;
+  private x: number = 60;
 
   _currentStep: number = 1;
-  
+
   set currentStep(value: number) {
     this._currentStep = value;
   }
@@ -32,14 +34,14 @@ export class ContactFormComponent implements OnDestroy {
   _isStepInvalid: boolean = true;
 
   set isStepInvalid(value: boolean) {
-      this._isStepInvalid = value;
+    this._isStepInvalid = value;
   }
 
   get isStepInvalid(): boolean {
     return this._isStepInvalid;
   }
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private windowService: WindowService) {
     this.form = this.fb.group({
       step1: this.fb.group({
         name: ['', Validators.required],
@@ -61,6 +63,15 @@ export class ContactFormComponent implements OnDestroy {
     });
   }
 
+  ngOnInit(): void {
+    const win = this.windowService.nativeWindow;
+    if (win && win!.innerWidth > 968) {
+      this.x = 60;
+    } else {
+      this.x = 20;
+    }
+  }
+
   checkValidation() {
     const stepKey = `step${this.currentStep}`;
     this.isStepInvalid = this.form.get(stepKey)?.invalid || false;
@@ -69,27 +80,51 @@ export class ContactFormComponent implements OnDestroy {
   onChangeStep(key: string) {
     switch (key) {
       case 'next':
-        if(this.currentStep < 3) {
+        if (this.currentStep < 3) {
+          this.moveMail('next');
           this.currentStep++;
         }
         break;
       case 'prev':
+        this.moveMail('prev');
         this.currentStep--;
-        break;  
+        break;
     }
     this.checkValidation();
   }
 
   onSubmit() {
     this.currentStep = 4;
+    this.moveMail('next');
     if (this.form.valid) {
       console.log(this.form.value)
     }
     setTimeout(() => {
       this.form.reset();
       this.currentStep = 1;
+      this.moveMail('prev');
       this.checkValidation();
     }, 3000);
+  }
+
+  moveMail(key: string) {
+    const mailIcon = document.querySelector('.mail-icon') as HTMLElement;
+    const win = this.windowService.nativeWindow;
+    const isWideScreen = win!.innerWidth > 968;
+    const step = isWideScreen ? 100 : 60;
+  
+    if (key === 'next') {
+      this.x += step;
+    } else if (key === 'prev') {
+      this.x -= step;  
+      if (this.currentStep === 1) {
+        this.x = isWideScreen ? 60 : 20;
+      }
+    }
+  
+    mailIcon.style.transform = isWideScreen 
+      ? `translateX(${this.x}px)` 
+      : `translate(${this.x}px, 30px)`;
   }
 
   ngOnDestroy(): void {

@@ -2,7 +2,12 @@
 @use "../../../assets/styles/mixins" as *;
 
 .contact-form-section {
-    padding-top: 60px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    @include mobileOnly {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
     .container {
         .h2-48pt {
             margin-bottom: 50px;
@@ -60,6 +65,25 @@
                     gap: 10px;
                 }
             }
+            .form-success-wrapper {
+                background-color: $neutral-1;
+                border-radius: 24px;
+                padding: 50px;
+                margin-bottom: 60px;
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 24px;
+                @include mobileOnly {
+                    margin-bottom: 0;
+                }
+                .success-icon {
+                    max-height: 240px;
+                    max-width: 240px;
+                }
+            }
             .col-wrapper {
                 display: flex;
                 flex: 1;
@@ -74,7 +98,6 @@
                     max-width: 448px;
                     @include mobileOnly {
                         color: $neutral-6;
-                        max-width: 260px;
                     }
                 }
                 .step-list {
@@ -105,6 +128,14 @@
                             align-items: center;
                             justify-content: center;
                         }
+                    }
+                }
+                .success-text {
+                    color: $neutral-6;
+                    max-width: 448px;
+                    padding-bottom: 125px;
+                    @include mobileOnly {
+                        padding-bottom: 30px;
                     }
                 }
                 .mail-icon {

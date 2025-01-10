@@ -1,14 +1,26 @@
 <section class="contact-form-section" id="contact-form">
   <div class="container">
-    <h2 class="h2-48pt">Kontaktieren Sie uns<br />und wir werden antworten</h2>
+    <h2 class="h2-48pt">Kontaktieren Sie uns<br>und wir werden antworten</h2>
     <div class="content-wrapper">
       <form
         class="form-wrapper"
         [formGroup]="form"
+        *ngIf="currentStep < 4"
         (ngSubmit)="onSubmit()"
       >
         <div class="red-block">phase 1</div>
-        <h3 class="h3-32pt">Bitte füllen Sie das<br />Kontaktformular aus</h3>
+        <h3 
+          class="h3-32pt"
+          *ngIf="currentStep === 1"
+        >
+          Bitte füllen Sie das<br>Kontaktformular aus
+        </h3>
+        <h3 
+          class="h3-32pt" 
+          *ngIf="currentStep > 1 && currentStep < 4"
+        >
+          für Welche Dienstleistung<br>interessierst du dich?
+        </h3>
         <div
           formGroupName="step1"
           *ngIf="currentStep === 1"
@@ -55,7 +67,7 @@
           <button
             type="button"
             class="btn btn-primary btn-pt20"
-            *ngIf="currentStep !== 1 && currentStep !== 4"
+            *ngIf="currentStep > 1 && currentStep < 4"
             (click)="onChangeStep('prev')"
           >
             Prev
@@ -79,10 +91,40 @@
           </button>
         </div>
       </form>
+
+      <div 
+        class="form-success-wrapper"
+        *ngIf="currentStep === 4"
+      >
+        <div class="success-icon">
+          <svg 
+            width="100%" 
+            height="100%" 
+            viewBox="0 0 240 240" 
+            fill="none"
+          >
+            <path 
+              d="M120.5 220.675C175.5 220.675 220.5 175.675 220.5 120.675C220.5 65.6748 175.5 20.6748 120.5 20.6748C65.5 20.6748 20.5 65.6748 20.5 120.675C20.5 175.675 65.5 220.675 120.5 220.675Z" 
+              stroke="#FF8D19" 
+              stroke-width="6" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+            />
+            <path 
+              d="M78 120.675L106.3 148.975L163 92.375" 
+              stroke="#FF8D19" 
+              stroke-width="6" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+            />
+          </svg>            
+        </div>
+        <h3 class="h3-32pt">Anfrage erfolgreich gesendet!</h3>
+      </div>
       
       <div class="col-wrapper">
         <h4 class="h4-28pt">Was passiert nach dem Absenden der Anfrage?</h4>
-        <ul class="step-list">
+        <ul class="step-list" *ngIf="currentStep < 4">
           <li class="step-list__item">
             <span class="counter">1</span>
             <p class="description">
@@ -104,6 +146,10 @@
             </p>
           </li>
         </ul>
+        <p class="success-text" *ngIf="currentStep === 4">
+          Ein Experte kontaktiert Sie,
+          nachdem er Ihre Anforderungen analysiert hat.
+        </p>
         <div class="mail-icon">
           <svg
             width="100%"
