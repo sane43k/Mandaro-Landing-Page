@@ -21,7 +21,7 @@ import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/f
   ]
 })
 
-export class SimpleInputComponent implements ControlValueAccessor{
+export class SimpleInputComponent implements ControlValueAccessor {
   [x: string]: any;
   @Input() placeholder: string = '';
   @Input() type: string = 'text;'
@@ -52,6 +52,6 @@ export class SimpleInputComponent implements ControlValueAccessor{
   }
 
   isValidInput(): boolean {
-    return this.value.length >= 2 && this.value.length <= 400;
+    return this.value.length >= 1 && this.value.length <= 100;
   }
 }

@@ -63,13 +63,23 @@
                 div[formGroupName="step3"] {
                     gap: 32px;
                     @include mobileOnly {
-                        gap: 16px;
+                        gap: 24px;
                     }
-                    .checkbox-wrapper {
+                    .agreement-wrapper {
                         display: flex;
                         align-items: flex-start;
                         gap: 10px;
                         transform: translateX(-12px);
+                    }
+                    .check-wrapper {
+                        display: flex;
+                        gap: 10px;
+                        .expression-wrapper {
+                            transform: translateY(19px);
+                            @include mobileOnly {
+                                transform: translateY(21px); 
+                            }
+                        }
                     }
                 }
                 .button-wrapper {

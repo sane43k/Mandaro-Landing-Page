@@ -1,6 +1,10 @@
 @use "../../../../../assets/styles/vars" as *;
 @use "../../../../../assets/styles/mixins" as *;
 
+:host {
+    flex: 1;
+}
+
 .field-wrapper {
     min-height: 54px;
     width: 100%;
@@ -11,7 +15,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    transition: border .2s ease;
+    transition: border .2s ease, margin .1s ease;
     @include mobileOnly {
         padding: 18px 16px;
     }
@@ -25,11 +29,7 @@
     &.error {
         caret-color: $accent-8;
         border: 1px solid $accent-8;
-        margin-bottom: 20px;
-        transition: all .1s ease;
-        @include mobileOnly {
-            margin-bottom: 17px;   
-        }
+        margin-bottom: 15px;
     }
     input {
         font-family: Manrope, sans-serif;

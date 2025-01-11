@@ -11,8 +11,8 @@
         (focus)="inputFocused = true"
         #inputModel="ngModel"
         required
-        minlength="2"
-        maxlength="400"
+        minlength="1"
+        maxlength="100"
     >
     <span 
         class="error-message" 
@@ -20,12 +20,6 @@
     >
         <ng-container *ngIf="inputModel.errors['required']">
             This field is required
-        </ng-container>
-        <ng-container *ngIf="inputModel.errors['minlength']">
-            Minimum 2 characters required
-        </ng-container>
-        <ng-container *ngIf="inputModel.errors['maxlength']">
-            Maximum 400 characters allowed
         </ng-container>
     </span>
 </div>

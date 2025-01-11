@@ -1,6 +1,6 @@
 <section class="contact-form-section" id="contact-form">
   <div class="container">
-    <h2 class="h2-48pt">Kontaktieren Sie uns<br>und wir werden antworten</h2>
+    <h2 class="h2-48pt">Kontaktieren Sie uns<br />und wir werden antworten</h2>
     <div class="content-wrapper">
       <form
         class="form-wrapper"
@@ -10,34 +10,28 @@
       >
         <app-red-tag>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path 
-              d="M12 22.7998C17.5 22.7998 22 18.2998 22 12.7998C22 7.2998 17.5 2.7998 12 2.7998C6.5 2.7998 2 7.2998 2 12.7998C2 18.2998 6.5 22.7998 12 22.7998Z" 
-              stroke="white" 
-              stroke-width="1.5" 
-              stroke-linecap="round" 
+            <path
+              d="M12 22.7998C17.5 22.7998 22 18.2998 22 12.7998C22 7.2998 17.5 2.7998 12 2.7998C6.5 2.7998 2 7.2998 2 12.7998C2 18.2998 6.5 22.7998 12 22.7998Z"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
               stroke-linejoin="round"
             />
-            <path 
-              d="M7.75 12.7997L10.58 15.6297L16.25 9.96973" 
-              stroke="white" 
-              stroke-width="1.5" 
-              stroke-linecap="round" 
+            <path
+              d="M7.75 12.7997L10.58 15.6297L16.25 9.96973"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
               stroke-linejoin="round"
             />
           </svg>
-          <span>Phase {{ currentStep }} von 3</span>                    
+          <span>Phase {{ currentStep }} von 3</span>
         </app-red-tag>
-        <h3 
-          class="h3-32pt"
-          *ngIf="currentStep === 1"
-        >
-          Bitte füllen Sie das<br>Kontaktformular aus
+        <h3 class="h3-32pt" *ngIf="currentStep === 1">
+          Bitte füllen Sie das<br />Kontaktformular aus
         </h3>
-        <h3 
-          class="h3-32pt" 
-          *ngIf="currentStep > 1 && currentStep < 4"
-        >
-          für Welche Dienstleistung<br>interessierst du dich?
+        <h3 class="h3-32pt" *ngIf="currentStep > 1 && currentStep < 4">
+          für Welche Dienstleistung<br />interessierst du dich?
         </h3>
         <div
           formGroupName="step1"
@@ -78,16 +72,25 @@
         >
           <textarea name="" id="" formControlName="comment"></textarea>
 
-          <div class="checkbox-wrapper">
+          <div class="agreement-wrapper">
             <app-checkbox formControlName="agreement"></app-checkbox>
             <p class="text text-pt14">
-              Ich stimme zu, dass meine Angaben und Daten zur Beantwortung meiner Anfrage 
-              gemäß der Datenschutzerklärung verarbeitet werden. Meine Einwilligung kann ich 
-              jederzeit zukünftig per E-Mail an service&#64;mandaro-digital.de widerrufen.
+              Ich stimme zu, dass meine Angaben und Daten zur Beantwortung
+              meiner Anfrage gemäß der Datenschutzerklärung verarbeitet werden.
+              Meine Einwilligung kann ich jederzeit zukünftig per E-Mail
+              an service&#64;mandaro-digital.de widerrufen.
             </p>
           </div>
 
-          <input type="text" formControlName="check" />
+          <div class="check-wrapper">
+            <p class="expression-wrapper">{{ expression }} =</p>
+            <app-simple-input
+              type="text"
+              placeholder="Ihre Antwort*"
+              formControlName="check"
+            >
+            </app-simple-input>
+          </div>
         </div>
 
         <div class="button-wrapper">
@@ -119,36 +122,28 @@
         </div>
       </form>
 
-      <div 
-        class="form-success-wrapper"
-        *ngIf="currentStep === 4"
-      >
+      <div class="form-success-wrapper" *ngIf="currentStep === 4">
         <div class="success-icon">
-          <svg 
-            width="100%" 
-            height="100%" 
-            viewBox="0 0 240 240" 
-            fill="none"
-          >
-            <path 
-              d="M120.5 220.675C175.5 220.675 220.5 175.675 220.5 120.675C220.5 65.6748 175.5 20.6748 120.5 20.6748C65.5 20.6748 20.5 65.6748 20.5 120.675C20.5 175.675 65.5 220.675 120.5 220.675Z" 
-              stroke="#FF8D19" 
-              stroke-width="6" 
-              stroke-linecap="round" 
+          <svg width="100%" height="100%" viewBox="0 0 240 240" fill="none">
+            <path
+              d="M120.5 220.675C175.5 220.675 220.5 175.675 220.5 120.675C220.5 65.6748 175.5 20.6748 120.5 20.6748C65.5 20.6748 20.5 65.6748 20.5 120.675C20.5 175.675 65.5 220.675 120.5 220.675Z"
+              stroke="#FF8D19"
+              stroke-width="6"
+              stroke-linecap="round"
               stroke-linejoin="round"
             />
-            <path 
-              d="M78 120.675L106.3 148.975L163 92.375" 
-              stroke="#FF8D19" 
-              stroke-width="6" 
-              stroke-linecap="round" 
+            <path
+              d="M78 120.675L106.3 148.975L163 92.375"
+              stroke="#FF8D19"
+              stroke-width="6"
+              stroke-linecap="round"
               stroke-linejoin="round"
             />
-          </svg>            
+          </svg>
         </div>
         <h3 class="h3-32pt">Anfrage erfolgreich gesendet!</h3>
       </div>
-      
+
       <div class="col-wrapper">
         <h4 class="h4-28pt">Was passiert nach dem Absenden der Anfrage?</h4>
         <ul class="step-list" *ngIf="currentStep < 4">
@@ -174,16 +169,11 @@
           </li>
         </ul>
         <p class="success-text" *ngIf="currentStep === 4">
-          Ein Experte kontaktiert Sie,
-          nachdem er Ihre Anforderungen analysiert hat.
+          Ein Experte kontaktiert Sie, nachdem er Ihre Anforderungen analysiert
+          hat.
         </p>
         <div class="mail-icon">
-          <svg
-            width="100%"
-            height="100%"
-            viewBox="0 0 400 300"
-            fill="none"
-          >
+          <svg width="100%" height="100%" viewBox="0 0 400 300" fill="none">
             <path
               d="M33.333 141.667C33.333 83.3333 66.6663 58.3333 116.666 58.3333H283.333C333.333 58.3333 366.666 83.3333 366.666 141.667V258.333C366.666 316.667 333.333 341.667 283.333 341.667H116.666"
               stroke="#AE0F0A"

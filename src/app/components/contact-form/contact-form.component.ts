@@ -25,6 +25,9 @@ export class ContactFormComponent implements OnDestroy, OnInit {
   private valueChangesSubscription: Subscription;
   private x: number = 60;
 
+  private correctAnswer: number | null = null;
+  expression: string = '';
+
   _currentStep: number = 1;
 
   set currentStep(value: number) {
@@ -58,7 +61,7 @@ export class ContactFormComponent implements OnDestroy, OnInit {
       step3: this.fb.group({
         comment: [''],
         agreement: [''],
-        check: ['', Validators.required]
+        check: ['', [Validators.required, this.checkValidator.bind(this)]]
       })
     });
 
@@ -85,6 +88,7 @@ export class ContactFormComponent implements OnDestroy, OnInit {
     switch (key) {
       case 'next':
         if (this.currentStep < 3) {
+          this.currentStep === 2 ? this.generateExpression() : null;
           this.moveMail('next');
           this.currentStep++;
         }
@@ -109,6 +113,21 @@ export class ContactFormComponent implements OnDestroy, OnInit {
       this.moveMail('prev');
       this.checkValidation();
     }, 3000);
+  }
+
+  generateExpression(): void {
+    const num1 = Math.floor(Math.random() * 10);
+    const num2 = Math.floor(Math.random() * 10);
+
+    this.expression = `${num1} + ${num2}`;
+    this.correctAnswer = num1 + num2;
+  }
+
+  checkValidator(control: any) {
+    if (control.value !== this.correctAnswer?.toString()) {
+      return { incorrect: true }; // Если ответ неверный, возвращаем ошибку
+    }
+    return null; // Если ответ правильный, валидатор проходит
   }
 
   moveMail(key: string) {
