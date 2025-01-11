@@ -77,7 +77,16 @@
           class="input-wrapper"
         >
           <textarea name="" id="" formControlName="comment"></textarea>
-          <input type="checkbox" formControlName="agreement" />
+
+          <div class="checkbox-wrapper">
+            <app-checkbox formControlName="agreement"></app-checkbox>
+            <p class="text text-pt14">
+              Ich stimme zu, dass meine Angaben und Daten zur Beantwortung meiner Anfrage 
+              gemäß der Datenschutzerklärung verarbeitet werden. Meine Einwilligung kann ich 
+              jederzeit zukünftig per E-Mail an service&#64;mandaro-digital.de widerrufen.
+            </p>
+          </div>
+
           <input type="text" formControlName="check" />
         </div>
 

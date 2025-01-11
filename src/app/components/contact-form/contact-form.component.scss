@@ -60,6 +60,18 @@
                         gap: 10px;
                     }
                 }
+                div[formGroupName="step3"] {
+                    gap: 32px;
+                    @include mobileOnly {
+                        gap: 16px;
+                    }
+                    .checkbox-wrapper {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 10px;
+                        transform: translateX(-12px);
+                    }
+                }
                 .button-wrapper {
                     width: 100%;
                     display: flex;

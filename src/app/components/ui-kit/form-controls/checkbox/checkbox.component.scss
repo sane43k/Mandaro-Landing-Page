@@ -1,3 +1,6 @@
+@import "../../../../../assets/styles/vars";
+@import "../../../../../assets/styles/mixins";
+
 .check {
     display: flex;
     align-items: center;
@@ -14,13 +17,20 @@
         display: inline-block;
         position: relative;
         cursor: pointer;
+        @include mobileOnly {
+            height: 16px;
+            width: 16px;
+        }
     }
     &__input:checked + &__box {
-        background-image: url(../images/icons/checkbox_white_20x20.svg);
+        background-image: url(../../../../../assets/images/icons/checkbox_white_20x20.svg);
         background-repeat: no-repeat;
         background-position: center;
         background-color: $accent-9;
         border: 1px solid $neutral-7;
+        @include mobileOnly {
+            background-image: url(../../../../../assets/images/icons/checkbox_white_16x16.svg);
+        }
     }
     &__input:hover + &__box {
         border-color: $neutral-5;
