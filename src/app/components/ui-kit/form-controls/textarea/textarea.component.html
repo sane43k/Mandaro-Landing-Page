@@ -1,0 +1,12 @@
+<div class="field-wrapper">
+    <textarea
+        [placeholder]="placeholder"
+        [rows]="rows"
+        [disabled]="disabled"
+        [name]="name"
+        [(ngModel)]="value"
+        (input)="handleInput($event)"
+        (blur)="onTouched()"
+    >
+    </textarea>
+</div>

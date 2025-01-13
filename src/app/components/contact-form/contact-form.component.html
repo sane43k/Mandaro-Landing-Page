@@ -70,7 +70,12 @@
           *ngIf="currentStep === 3"
           class="input-wrapper"
         >
-          <textarea name="" id="" formControlName="comment"></textarea>
+          <app-textarea
+            placeholder="Deine Bemerkung"
+            name="userComment"
+            formControlName="comment"
+          >
+          </app-textarea>
 
           <div class="agreement-wrapper">
             <app-checkbox formControlName="agreement"></app-checkbox>

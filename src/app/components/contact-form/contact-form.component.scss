@@ -59,12 +59,6 @@
                         margin-bottom: 24px;
                         gap: 10px;
                     }
-                }
-                div[formGroupName="step3"] {
-                    gap: 32px;
-                    @include mobileOnly {
-                        gap: 24px;
-                    }
                     .agreement-wrapper {
                         display: flex;
                         align-items: flex-start;

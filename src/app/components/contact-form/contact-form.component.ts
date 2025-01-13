@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { NgIf } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { WindowService } from '../../services/window.service';
+import { TextareaComponent } from '../ui-kit/form-controls/textarea/textarea.component';
 
 @Component({
   selector: 'app-contact-form',
@@ -13,6 +14,7 @@ import { WindowService } from '../../services/window.service';
   imports: [
     SimpleInputComponent,
     CheckboxComponent,
+    TextareaComponent,
     RedTagComponent,
     ReactiveFormsModule,
     NgIf
@@ -125,9 +127,9 @@ export class ContactFormComponent implements OnDestroy, OnInit {
 
   checkValidator(control: any) {
     if (control.value !== this.correctAnswer?.toString()) {
-      return { incorrect: true }; // Если ответ неверный, возвращаем ошибку
+      return { incorrect: true };
     }
-    return null; // Если ответ правильный, валидатор проходит
+    return null;
   }
 
   moveMail(key: string) {

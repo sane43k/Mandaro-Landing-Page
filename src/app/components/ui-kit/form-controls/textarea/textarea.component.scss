@@ -1,0 +1,51 @@
+@use "../../../../../assets/styles/vars" as *;
+@use "../../../../../assets/styles/mixins" as *;
+
+:host {
+    flex: 1;
+}
+
+.field-wrapper {
+    max-height: 168px;
+    min-height: 54px;
+    width: 100%;
+    height: 100%;
+    background-color: $neutral-1;
+    border: 1px solid $neutral-3;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: border .2s ease, margin .1s ease;
+    @include mobileOnly {
+        padding: 16px;
+    }
+    &:hover {
+        border: 1px solid $neutral-4;
+    }
+    &:focus-within {
+        caret-color: $accent-9;
+        border: 1px solid $accent-9;
+    }
+    textarea {
+        font-family: Manrope, sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 130%;
+        color: $neutral-5;
+        height: 100%;
+        width: 100%;    
+        background-color: $neutral-1;
+        border: none;
+        outline: none;
+        padding: 0;
+        resize: none;
+        @include mobileOnly {
+            font-size: 14px;
+        }
+        &::placeholder {
+            color: $neutral-4;
+        }
+    }
+}

@@ -26,9 +26,9 @@
         background-color: $accent-9;
         border-color: transparent;
         border-radius: 12px;
-        padding: 19px 10px;
+        padding: 13px 10px;
         @include mobileOnly {
-            padding: 17px 10px;
+            padding: 16px 10px;
         }
         &.btn-communicate {
             width: initial;
