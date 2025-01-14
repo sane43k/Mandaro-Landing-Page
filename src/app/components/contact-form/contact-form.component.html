@@ -59,11 +59,24 @@
           *ngIf="currentStep === 2"
           class="input-wrapper"
         >
-          <select name="service" formControlName="service">
-            <option value="1">Webdesign & Grafik</option>
-            <option value="2">Entwicklung</option>
-            <option value="3">SEO</option>
-          </select>
+          <app-select
+            [options]="[
+              { value: 1, label: 'Webdesign & Grafik' },
+              { value: 2, label: 'Entwicklung' },
+              { value: 3, label: 'SEO' },
+              { value: 4, label: 'Conversionsrate Optimierung' },
+              { value: 5, label: 'Tracking & Datenanalyse' },
+              { value: 6, label: 'SEA / PPC' },
+              { value: 7, label: 'SMM' },
+              { value: 8, label: 'Consulting' },
+              { value: 9, label: 'Sonstige Marketingkanäle' },
+              { value: 10, label: 'Unternehmensprofil Optimierungen' },
+              { value: 11, label: 'Öffentlichkeitsarbeit' },
+            ]"
+            placeholder="Wählen Sie eine Option"
+            name="serviceSelection"
+            formControlName="service"
+          ></app-select>
         </div>
         <div
           formGroupName="step3"
@@ -105,7 +118,7 @@
             *ngIf="currentStep > 1 && currentStep < 4"
             (click)="onChangeStep('prev')"
           >
-            Prev
+            Zurück
           </button>
           <button
             type="button"
@@ -114,7 +127,7 @@
             [disabled]="isStepInvalid"
             (click)="onChangeStep('next')"
           >
-            Next
+            Weiter
           </button>
           <button
             type="submit"
@@ -122,7 +135,7 @@
             *ngIf="currentStep === 3"
             [disabled]="isStepInvalid"
           >
-            Submit
+            Absenden
           </button>
         </div>
       </form>

@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SimpleInputComponent } from "../ui-kit/form-controls/simple-input/simple-input.component";
+import { SelectComponent } from '../ui-kit/form-controls/select/select.component';
 import { CheckboxComponent } from '../ui-kit/form-controls/checkbox/checkbox.component';
 import { RedTagComponent } from '../ui-kit/red-tag/red-tag.component';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -13,6 +14,7 @@ import { TextareaComponent } from '../ui-kit/form-controls/textarea/textarea.com
   standalone: true,
   imports: [
     SimpleInputComponent,
+    SelectComponent,
     CheckboxComponent,
     TextareaComponent,
     RedTagComponent,

@@ -71,6 +71,7 @@
                         .expression-wrapper {
                             transform: translateY(19px);
                             @include mobileOnly {
+                                font-size: 16px;
                                 transform: translateY(21px); 
                             }
                         }

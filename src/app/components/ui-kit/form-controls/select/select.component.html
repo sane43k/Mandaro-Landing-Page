@@ -1,0 +1,28 @@
+<div 
+  class="field-wrapper" 
+  [attr.name]="name"
+  (click)="toggleDropdown()"
+>
+  <div class="select-wrapper">
+    <div class="select-display">
+      {{ selectedOption?.label || placeholder }}
+    </div>
+    <button
+      type="button"
+      class="btn btn-secondary"
+      [ngClass]="{ 'open': isOpen }"
+    ></button>
+  </div>
+  <div 
+    class="dropdown" 
+    [ngClass]="{ 'show': isOpen }"
+  >
+    <div
+      class="dropdown__item"
+      *ngFor="let option of options"
+      (click)="selectOption(option, $event)"
+    >
+      {{ option.label }}
+    </div>
+  </div>
+</div>

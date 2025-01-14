@@ -11,7 +11,7 @@
     &-pt20 {
         font-size: 20px;
         @include mobileOnly {
-            font-size: 14px;
+            font-size: 16px;
         }
     }
     &-pt18 {
@@ -60,16 +60,6 @@
                 }
             }
         }
-        // span {
-        //     display: flex;
-        //     align-items: center;
-        //     &::after {
-        //         content: url(../images/icons/loading_white_32x32.svg);
-        //         height: 32px;
-        //         width: 32px;
-        //         padding-left: 10px;
-        //     }
-        // }
         &:hover {
             background-color: $accent-10;
         }
@@ -85,25 +75,25 @@
         }
     }
     &-secondary {
-        width: 50px;
-        height: 50px;
+        width: 30px;
+        height: 30px;
         background-color: $neutral-1;
-        border: 1px solid $neutral-4;
+        border: 0.6px solid $neutral-4;
         border-radius: 50%;
-        &::after {
-            content: url(../images/icons/caret-down_black_32x32.svg);
-            height: 32px;
-            width: 32px;
-        }
+        background-image: url(../images/icons/caret-down_black_20x20.svg);
+        background-size: 20px 20px;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: all .2s ease-in-out;
         &:hover {
             background-color: $neutral-2;
         }
         &:active {
             background-color: $neutral-3;
         }
-        &:focus {
-            border: 2px solid $neutral-7;
-        }
+        // &:focus {
+        //     border: 2px solid $neutral-7;
+        // }
         &:disabled {
             opacity: 0.55;
         }
