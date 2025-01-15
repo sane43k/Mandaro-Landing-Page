@@ -21,6 +21,7 @@
       class="dropdown__item"
       *ngFor="let option of options"
       (click)="selectOption(option, $event)"
+      [ngClass]="{ 'selected': option.value === selectedOption?.value }"
     >
       {{ option.label }}
     </div>

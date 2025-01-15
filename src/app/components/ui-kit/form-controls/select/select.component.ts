@@ -40,6 +40,7 @@ export class SelectComponent implements ControlValueAccessor {
   registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
+
   toggleDropdown(): void {
     this.isOpen = !this.isOpen;
   }

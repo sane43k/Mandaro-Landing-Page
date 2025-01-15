@@ -67,7 +67,7 @@
       justify-content: flex-start;
       transition: background-color .2s ease;
       cursor: pointer;
-      &:hover {
+      &%checkmark {
         background-color: $neutral-3;
         &::before {
           content: url(../../../../../assets/images/icons/checkmark_gray_16x16.svg);
@@ -76,6 +76,12 @@
           margin-right: 10px;
           margin-left: -26px;
         }
+      }
+      &:hover {
+        @extend %checkmark;
+      }
+      &.selected {
+        @extend %checkmark;
       }
     }
   }
