@@ -1,0 +1,12 @@
+.logo-wrapper {
+    height: 38px;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    .logo {
+        height: 100%;
+        width: 100%;
+    }
+}

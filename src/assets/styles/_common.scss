@@ -124,12 +124,3 @@ ul, ol, ul li, ol li {
     padding: 0;
     margin: 0;
 }
-
-.logo {
-    height: 38px;
-    width: 130px;
-    @include mobileOnly {
-        height: 24px;
-        width: 82px;
-    }
-}

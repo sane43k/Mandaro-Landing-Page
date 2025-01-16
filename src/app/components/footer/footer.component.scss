@@ -27,15 +27,6 @@
                 align-items: center;
                 gap: 32px;
             }
-            .logo-wrapper {
-                .logo {
-                    @include mobileOnly {
-                        height: 40px;
-                        width: 136px;
-                    }
-                }
-
-            }
         }
         .links-wrapper {
             display: flex;

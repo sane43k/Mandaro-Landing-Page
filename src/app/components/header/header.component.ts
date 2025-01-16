@@ -1,13 +1,13 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { WindowService } from '../../services/window.service';
 import { Router } from '@angular/router';
+import { LogoComponent } from '../ui-kit/logo/logo.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
-    RouterLink
+    LogoComponent
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'

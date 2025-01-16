@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { SocialMediaComponent } from "../ui-kit/social-media/social-media.component";
+import { LogoComponent } from '../ui-kit/logo/logo.component';
 import { WindowService } from '../../services/window.service';
 import {RouterLink} from "@angular/router";
 
@@ -8,6 +9,7 @@ import {RouterLink} from "@angular/router";
   standalone: true,
   imports: [
     SocialMediaComponent,
+    LogoComponent,
     RouterLink
   ],
   templateUrl: './footer.component.html',
