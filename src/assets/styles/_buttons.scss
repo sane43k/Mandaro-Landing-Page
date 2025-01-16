@@ -34,15 +34,14 @@
             width: initial;
             padding: 16px 36px;
             @include mobileOnly {
-                width: 100%;
-                padding: 12px 10px;
+                // width: 100%;
+                padding: 12px 36px;
             }
             &-small {
                 padding: 9px 36px;
-                @include mobileOnly {
-                    width: 100%;
-                    padding: 12px 10px;
-                }
+                // @include mobileOnly {
+                //     width: 100%;
+                // }
             }
             span {
                 display: flex;

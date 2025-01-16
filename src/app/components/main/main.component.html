@@ -1,7 +1,35 @@
 <section class="main-section">
     <div class="container">
         <div class="content-wrapper">
-            <app-tag [isRedTag]="false">kek</app-tag>
+            <app-tag [isRedTag]="false">
+                <img 
+                    src="/assets/images/logos/logo_colored.svg" 
+                    class="logo" 
+                    alt="Mandaro Logo"
+                >
+            </app-tag>
+            <h1 class="h1-55pt">
+                IHR PARTNER FÜR
+                <span>
+                    OFFLINE- UND
+                    <br>
+                    ONLINE-MARKETING 
+                </span> 
+            </h1>
+            <div class="button-wrapper">
+                <button 
+                    type="button" 
+                    class="btn btn-primary btn-communicate btn-pt20" 
+                    onclick="window.location.href='#contact-form';"
+                >
+                    Jetzt kontaktieren
+                    <span></span>
+                </button>
+                <app-social-media></app-social-media>
+            </div>
+        </div>
+        <div class="image-wrapper">
+            <img src="/assets/images/main-page-img_582x660.svg" alt="Mandaro Digital">
         </div>
     </div>
 </section>

@@ -3,20 +3,14 @@
 :host {
     height: 100%;
     width: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px;
     display: flex;
     flex: 1 0 auto;
     flex-direction: column;
     gap: 140px;
     @include mobileOnly {
+        padding-top: 40px;
         gap: 80px;
-    }
-    app-main {
-        margin-top: 80px;
-        @include mobileOnly {
-            margin-top: 40px;
-        }
-    }
-    app-contact-form {
-        margin-bottom: 80px;
     }
 }

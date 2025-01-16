@@ -21,6 +21,7 @@ export class LogoComponent {
         const win = this.windowService.nativeWindow;
         win?.scrollTo({
           top: 0,
+          behavior: 'instant'
         });
       })
   }
