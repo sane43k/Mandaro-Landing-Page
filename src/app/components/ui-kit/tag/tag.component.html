@@ -1,0 +1,10 @@
+<div 
+    class="tag-wrapper"
+    [ngClass]="{
+        'red-tag': isRedTag,
+        'gray-tag': !isRedTag,
+        'contact-form-tag': isContactForm
+    }"
+>
+    <ng-content></ng-content>
+</div>
