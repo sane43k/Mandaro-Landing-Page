@@ -14,6 +14,8 @@ import { LogoComponent } from '../ui-kit/logo/logo.component';
 })
 
 export class HeaderComponent implements OnInit {
+  isMainMenuShow: boolean = false;
+
   constructor(private windowService: WindowService, private router: Router) {
   }
 
@@ -47,6 +49,7 @@ export class HeaderComponent implements OnInit {
     mainMenu?.classList.toggle('show');
     
     if (mainMenu?.classList.contains('show')) {
+      this.isMainMenuShow = true;
       if (win!.scrollY) {
         bodyStyle.cssText = `
           overflow: hidden;
@@ -58,6 +61,7 @@ export class HeaderComponent implements OnInit {
         `;
       }
     } else {
+      this.isMainMenuShow = false;
       if (win!.scrollY) {
         bodyStyle.cssText = `
           overflow: auto;
@@ -71,10 +75,14 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  scrollToForm(isMainMenuBtn: boolean): void {
-    if (isMainMenuBtn) {
+  hideMainMenu(): void {
+    if (this.isMainMenuShow) {
       this.showMainMenu();
     }
+  }
+
+  scrollToForm(): void {
+    this.hideMainMenu();
 
     const form = document.getElementById('contact-form');
     if (form) {
@@ -84,10 +92,10 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  navigateAndScroll(isMainMenuBtn: boolean): void {
+  navigateAndScroll(): void {
     this.router.navigate([''])
       .then(() => {
-        this.scrollToForm(isMainMenuBtn);
+        this.scrollToForm();
       });
   }
 }

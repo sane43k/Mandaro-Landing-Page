@@ -4,15 +4,27 @@
         <nav class="main-menu">
             <ul class="main-menu__list">
                 <li class="main-menu__list__item">
-                    <a href="" class="link link-dark link-pt16">Unsere Dienstleistung</a>
+                    <a 
+                        href="#services" 
+                        (click)="hideMainMenu()" 
+                        class="link link-dark link-pt16"
+                    >
+                        Unsere Dienstleistung
+                    </a>
                 </li>
                 <li class="main-menu__list__item">
-                    <a href="" class="link link-dark link-pt16">Warum Mandaro</a>
+                    <a 
+                        href="#" 
+                        (click)="hideMainMenu()" 
+                        class="link link-dark link-pt16"
+                    >
+                        Warum Mandaro
+                    </a>
                 </li>
             </ul>
             <button 
                 class="btn btn-primary btn-communicate btn-pt20"
-                (click)="navigateAndScroll(true)"
+                (click)="navigateAndScroll()"
             >
                 Jetzt kontaktieren
                 <span></span>
@@ -20,7 +32,7 @@
         </nav>
         <button 
             class="btn btn-primary btn-communicate btn-communicate-small btn-pt20"
-            (click)="navigateAndScroll(false)"
+            (click)="navigateAndScroll()"
         >
             Jetzt kontaktieren
             <span></span>

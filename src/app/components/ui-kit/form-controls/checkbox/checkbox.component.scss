@@ -17,7 +17,7 @@
         display: inline-block;
         position: relative;
         cursor: pointer;
-        @include mobileOnly {
+        @include medium-screen {
             height: 16px;
             width: 16px;
         }
@@ -28,7 +28,7 @@
         background-position: center;
         background-color: $accent-9;
         border: 1px solid $neutral-7;
-        @include mobileOnly {
+        @include medium-screen {
             background-image: url(../../../../../assets/images/icons/checkbox_white_16x16.svg);
         }
     }

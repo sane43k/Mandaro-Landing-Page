@@ -16,7 +16,7 @@
     align-items: center;
     position: relative;
     transition: border .2s ease, margin .1s ease;
-    @include mobileOnly {
+    @include medium-screen {
         padding: 18px 16px;
     }
     &:hover {
@@ -43,7 +43,7 @@
         border: none;
         outline: none;
         padding: 0;
-        @include mobileOnly {
+        @include medium-screen {
             font-size: 16px;
         }
         &::placeholder {
@@ -58,7 +58,7 @@
         position: absolute;
         top: 58px;
         right: 0;
-        @include mobileOnly {
+        @include medium-screen {
             font-size: 12px;
         }
     }

@@ -10,13 +10,13 @@
     transition: all .2s linear;
     &-pt20 {
         font-size: 20px;
-        @include mobileOnly {
+        @include medium-screen {
             font-size: 16px;
         }
     }
     &-pt18 {
         font-size: 18px;
-        @include mobileOnly {
+        @include medium-screen {
             font-size: 14px;
         }
     }
@@ -27,19 +27,19 @@
         border-color: transparent;
         border-radius: 12px;
         padding: 13px 10px;
-        @include mobileOnly {
+        @include medium-screen {
             padding: 16px 10px;
         }
         &.btn-communicate {
             width: initial;
             padding: 16px 36px;
-            @include mobileOnly {
+            @include medium-screen {
                 // width: 100%;
                 padding: 12px 36px;
             }
             &-small {
                 padding: 9px 36px;
-                // @include mobileOnly {
+                // @include medium-screen {
                 //     width: 100%;
                 // }
             }
@@ -51,7 +51,7 @@
                     height: 32px;
                     width: 32px;
                     padding-left: 10px;
-                    @include mobileOnly {
+                    @include medium-screen {
                         content: url(../images/icons/arrow-right_white_28x28.svg);
                         height: 28px;
                         width: 28px;     
@@ -109,7 +109,7 @@
     justify-content: center;
     position: relative;
     cursor: pointer;
-    @include mobileOnly {
+    @include medium-screen {
         display: flex;
     }
     %burger {

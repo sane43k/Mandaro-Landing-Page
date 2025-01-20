@@ -7,7 +7,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 30px;
-        @include mobileOnly {
+        @include medium-screen {
             flex-direction: column;
             align-items: normal;
             justify-content: center;
@@ -25,7 +25,7 @@
             .h1-55pt {
                 font-size: calc(34px + 1.6vw);
                 margin: 6px 0 50px;
-                @include mobileOnly {
+                @include medium-screen {
                     font-size: 34px;
                     margin: 4px 0 24px;
                 }
@@ -37,7 +37,7 @@
                 display: flex;
                 align-items: center;
                 gap: 45px;
-                @include mobileOnly {
+                @include medium-screen {
                     flex-direction: column;
                     align-items: flex-start;
                     gap: 24px;
@@ -50,16 +50,16 @@
             align-items: center;
             justify-content: center;
             img {
-                animation: scaleup .5s ease-in-out;
+                animation: scale-up .5s ease-in-out;
                 max-height: 660px;
                 max-width: 582px;     
                 height: 100%;
                 width: 100%;
-                @include mobileOnly {
+                @include medium-screen {
                     max-height: 414px;
                     max-width: 365px;            
                 }
-                @keyframes scaleup {
+                @keyframes scale-up {
                     0% {
                         opacity: 0;
                         transform: scale(.3);
