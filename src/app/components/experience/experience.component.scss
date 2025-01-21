@@ -1,0 +1,30 @@
+@import "../../../assets/styles/vars";
+@import "../../../assets/styles/mixins";
+
+.experience-section {
+    .container {
+        .h2-48pt {
+            margin: 8px 0 50px;
+            @include medium-screen {
+                margin: 4px 0 24px;
+            }
+        }
+        .blocks-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            .bottom-blocks {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                app-experience-block {
+                    width: calc(50% - 5px);
+                    @include small-screen {
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+    }
+}

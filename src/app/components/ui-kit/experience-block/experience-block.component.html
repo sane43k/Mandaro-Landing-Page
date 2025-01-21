@@ -1,0 +1,22 @@
+<div 
+    class="block-wrapper"
+    [ngClass]="{'orange-block': isOrangeBlock}"
+>
+    <div class="image-wrapper">
+        <img 
+            [src]="imgSrc" 
+            [alt]="imgAlt"
+            width="570"
+            height="366"
+        >
+    </div>
+    <div class="info-wrapper">
+        <div class="tag-list">
+            <app-tag *ngFor="let tag of tags">
+                {{ tag }}
+            </app-tag>
+        </div>
+        <h3 class="h3-32pt">{{ title }}</h3>
+        <p>{{ description }}</p>
+    </div>
+</div>

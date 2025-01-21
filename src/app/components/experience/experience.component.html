@@ -1,0 +1,44 @@
+<section class="experience-section">
+    <div class="container">
+        <app-tag [isRedTag]="false">Mehr als 15 Jahre Erfahrung</app-tag>
+        <h2 class="h2-48pt">
+            Wir legen das Fundament für Ihren langfristigen Erfolg
+        </h2>
+        <div class="blocks-wrapper">
+            <app-experience-block
+                [isOrangeBlock]="true"
+                imgSrc="/assets/images/experience-section/web-development_570x366.webp"
+                imgAlt="web development"
+                [tags]="['Web-Plattformen', 'Webseiten']"
+                title="Web Entwicklung"
+                description="Wir realisieren Ihre Ideen und setzen dabei konsequent auf neuste UI/UX-Prinzipien. 
+                Ob beim Aufbau eines Online-Shops, der Entwicklung einer Plattform von Grund auf, der Erstellung 
+                eines komplexen Bewertungs- und Berichtssystems oder einer kompakten App mit wenigen 
+                Screens – wir begleiten Sie durch jeden Schritt der Entwicklung. 
+                Auch nach dem Go-Live sind wir für Support und Wartung weiterhin an Ihrer Seite. Alles DSGVO-konform!"
+            >
+            </app-experience-block>
+            <div class="bottom-blocks">
+                <app-experience-block
+                    imgSrc="/assets/images/experience-section/app-development_570x366.webp"
+                    imgAlt="app development"
+                    [tags]="['IOS', 'Android']"
+                    title="APP-Entwicklung"
+                    description="Ihre App-Idee, professionell umgesetzt: Von der Konzeption bis zum Go-Live entwickeln 
+                    wir maßgeschneiderte Apps, die Ihre Nutzer begeistern – intuitiv, leistungsstark und individuell."
+                >
+                </app-experience-block>
+                <app-experience-block
+                    imgSrc="/assets/images/experience-section/devops_570x366.webp"
+                    imgAlt="devops"
+                    [tags]="['DevOPs']"
+                    title="Serverinfrastruktur und DevOPs"
+                    description="Optimierte Server- und DevOps-Lösungen: Wir sorgen für stabile, skalierbare Infrastrukturen, 
+                    automatisierte Workflows und maximale Performance – sicher, 
+                    effizient und maßgeschneidert für Ihr Unternehmen."
+                >
+                </app-experience-block>
+            </div>
+        </div>
+    </div>
+</section>

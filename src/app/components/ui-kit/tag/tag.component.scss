@@ -8,19 +8,27 @@
     border-radius: 12px;
     padding: 8px 12px;
     display: inline-block;
+    transition: transform .3s ease;
     @include medium-screen {
         font-size: 12px;
         padding: 6px 12px;
     }
+    &:hover {
+        transform: scale(1.05);
+    } 
     &.gray-tag {
         color: $neutral-6;
         background-color: $neutral-3;
     }
     &.red-tag {
         color: $neutral-1;
-        background-color: $accent-8;    
+        background-color: $accent-8;  
     }
     &.contact-form-tag {
+        transition: initial;
+        &:hover {
+            transform: initial;
+        }  
         @include medium-screen {
             font-size: 16px;
         }
