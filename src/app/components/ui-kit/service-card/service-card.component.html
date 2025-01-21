@@ -1,0 +1,17 @@
+<div class="services">
+    <h3 class="h4-28pt">{{ title }}</h3>
+    <ul class="services__item">
+        <li 
+            class="services__item__options"
+            *ngFor="let option of options"
+        >
+            {{ option }}
+        </li>
+    </ul>
+    <div class="icon-wrapper">
+        <img 
+            [src]="iconSrc" 
+            [alt]="iconAlt"
+        >
+    </div>
+</div>

@@ -1,25 +1,15 @@
-import { NgClass } from '@angular/common';
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { ServiceCardComponent } from '../ui-kit/service-card/service-card.component';
 
 @Component({
   selector: 'app-services',
   standalone: true,
   imports: [
-    NgClass,
+    ServiceCardComponent
   ],
   templateUrl: './services.component.html',
   styleUrl: './services.component.scss'
 })
 
 export class ServicesComponent {
-  // scrollPosition: number = 0;
-
-  // @HostListener('window:scroll', [])
-  // onWindowScroll() {
-  //   this.scrollPosition = window.scrollY || document.documentElement.scrollTop;
-  //   if (this.scrollPosition !== 550) {
-  //     return;
-  //   }
-  //   console.log(`Пользователь прокрутил: ${this.scrollPosition}px`);
-  // }
 }

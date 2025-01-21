@@ -1,123 +1,65 @@
 <section class="services-section" id="services">
     <div class="container">
-        <h2 class="h2-48pt">Unsere Dienstleistung</h2>
+        <h2 class="h2-48pt">Unsere Dienstleistungen</h2>
         <p class="description">
             Wir helfen Ihnen, Ihr Geschäft mit innovativen 
             Lösungen auf die nächste Stufe zu heben.
         </p>
         <div class="services-wrapper">
-            <div class="services">
-                <h3 class="h4-28pt">Klassisches Marketing</h3>
-                <ul class="services__item">
-                    <li class="services__item__options">
-                        Öffentlichkeitsarbeit
-                    </li>
-                    <li class="services__item__options">
-                        Unternehmensprofil Optimierungen
-                    </li>
-                    <li class="services__item__options">
-                        Pressearbeit, Textarbeiten, Konzeption & Strategie
-                    </li>
-                    <li class="services__item__options">
-                        PR-Consulting
-                    </li>
-                    <li class="services__item__options">
-                        Strategischer Aufbau der Kommunikation für kurz-, 
-                        mittel- & langfristige Ziele
-                    </li>
-                </ul>
-                <div class="icon-wrapper">
-                    <img 
-                        src="/assets/images/icons/services-page/classic-marketing_80x80.svg" 
-                        alt="classic marketing"
-                    >
-                </div>
-            </div>
-            <div class="services">
-                <h3 class="h4-28pt">Online Marketing</h3>
-                <ul class="services__item">
-                    <li class="services__item__options">
-                        SEO
-                    </li>
-                    <li class="services__item__options">
-                        Optimierung des Pagespeed
-                    </li>
-                    <li class="services__item__options">
-                        Tracking & Datenanalyse
-                    </li>
-                    <li class="services__item__options">
-                        Analyse der Zugänglichkeit
-                    </li>
-                    <li class="services__item__options">
-                        Google Ads & Conversionsrate Optimierung
-                    </li>
-                    <li class="services__item__options">
-                        Soziale Medien
-                    </li>
-                </ul>
-                <div class="icon-wrapper">
-                    <img 
-                        src="/assets/images/icons/services-page/online-marketing_80x80.svg" 
-                        alt="online marketing"
-                    >
-                </div>
-            </div>
-            <div class="services">
-                <h3 class="h4-28pt">Gestaltung</h3>
-                <ul class="services__item">
-                    <li class="services__item__options">
-                        Markenbildung, Corporate Identity
-                    </li>
-                    <li class="services__item__options">
-                        Grafische Gestaltung
-                    </li>
-                    <li class="services__item__options">
-                        Design-Überprüfung
-                    </li>
-                    <li class="services__item__options">
-                        UI/UX-Gestaltung
-                    </li>
-                </ul>
-                <div class="icon-wrapper">
-                    <img 
-                        src="/assets/images/icons/services-page/design_80x80.svg" 
-                        alt="design"
-                    >
-                </div>
-            </div>
-            <div class="services">
-                <h3 class="h4-28pt">Entwicklung</h3>
-                <ul class="services__item">
-                    <li class="services__item__options">
-                        Web-Entwicklung
-                    </li>
-                    <li class="services__item__options">
-                        App-Entwicklung
-                    </li>
-                    <li class="services__item__options">
-                        IT Sicherheitsberatung & Securityaudit
-                    </li>
-                    <li class="services__item__options">
-                        IT Teamabstellung
-                    </li>
-                    <li class="services__item__options">
-                        Cloudcomputing und DevOps
-                    </li>
-                    <li class="services__item__options">
-                        Outstaffing & Nearshoring
-                    </li>
-                    <li class="services__item__options">
-                        Outsourcing/
-                        Personalbeschaffung
-                    </li>
-                </ul>
-                <div class="icon-wrapper">
-                    <img 
-                        src="/assets/images/icons/services-page/development_80x80.svg" 
-                        alt="development"
-                    >
-                </div>
-            </div>
+            <app-service-card
+                title="Klassisches Marketing"
+                [options]="[
+                    'Öffentlichkeitsarbeit',
+                    'Unternehmensprofil Optimierungen',
+                    'Pressearbeit, Textarbeiten, Konzeption & Strategie',
+                    'PR-Consulting',
+                    'Strategischer Aufbau der Kommunikation für kurz-, mittel- & langfristige Ziele'
+                ]"
+                iconSrc="/assets/images/icons/services-page/classic-marketing_80x80.svg"
+                iconAlt="classic marketing"
+            >
+            </app-service-card>
+            <app-service-card
+                title="Online Marketing"
+                [options]="[
+                    'SEO',
+                    'Optimierung des Pagespeed',
+                    'Tracking & Datenanalyse',
+                    'Analyse der Zugänglichkeit',
+                    'Google Ads & Conversionsrate Optimierung',
+                    'Soziale Medien'
+                ]"
+                iconSrc="/assets/images/icons/services-page/online-marketing_80x80.svg"
+                iconAlt="online marketing"
+            >
+            </app-service-card>
+            <app-service-card
+                title="Gestaltung"
+                [options]="[
+                    'Markenbildung, Corporate Identity',
+                    'Grafische Gestaltung',
+                    'Design-Überprüfung',
+                    'UI/UX-Gestaltung'
+                ]"
+                iconSrc="/assets/images/icons/services-page/design_80x80.svg"
+                iconAlt="design"
+            >
+            </app-service-card>
+            <app-service-card
+                title="Entwicklung"
+                [options]="[
+                    'Web-Entwicklung',
+                    'App-Entwicklung',
+                    'IT Sicherheitsberatung & Securityaudit',
+                    'IT Teamabstellung',
+                    'Cloudcomputing und DevOps',
+                    'Outstaffing & Nearshoring',
+                    'Outsourcing/ Personalbeschaffung'
+                ]"
+                iconSrc="/assets/images/icons/services-page/development_80x80.svg"
+                iconAlt="development"
+            >
+            </app-service-card>
         </div>
     </div>
 </section>
