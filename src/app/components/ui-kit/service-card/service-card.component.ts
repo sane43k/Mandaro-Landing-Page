@@ -13,7 +13,7 @@ import { Component, HostListener, Input } from '@angular/core';
 
 export class ServiceCardComponent {
   @Input() title: string = '';
-  @Input() options: string[] = [];
+  @Input() items: string[] = [];
   @Input() iconSrc: string = '';
   @Input() iconAlt: string = 'kek';
 

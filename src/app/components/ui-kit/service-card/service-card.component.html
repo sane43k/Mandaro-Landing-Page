@@ -1,11 +1,11 @@
-<div class="services">
+<div class="service-card-wrapper">
     <h3 class="h4-28pt">{{ title }}</h3>
-    <ul class="services__item">
+    <ul class="services-list">
         <li 
-            class="services__item__options"
-            *ngFor="let option of options"
+            class="services-list__item"
+            *ngFor="let item of items"
         >
-            {{ option }}
+            {{ item }}
         </li>
     </ul>
     <div class="icon-wrapper">

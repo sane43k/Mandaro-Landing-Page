@@ -3,6 +3,7 @@ import { ContactFormComponent } from "../../components/contact-form/contact-form
 import { MainComponent } from '../../components/main/main.component';
 import { ServicesComponent } from '../../components/services/services.component';
 import { ExperienceComponent } from '../../components/experience/experience.component';
+import { WhyMandaroComponent } from '../../components/why-mandaro/why-mandaro.component';
 
 @Component({
   selector: 'app-main-page',
@@ -11,7 +12,8 @@ import { ExperienceComponent } from '../../components/experience/experience.comp
     ContactFormComponent,
     MainComponent,
     ServicesComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    WhyMandaroComponent,
 ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'

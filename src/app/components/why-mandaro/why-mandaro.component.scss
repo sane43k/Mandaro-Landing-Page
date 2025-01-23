@@ -1,0 +1,47 @@
+@import '../../../assets/styles/vars';
+@import '../../../assets/styles/mixins';
+
+.why-mandaro-section {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        @include medium-screen {
+            flex-direction: column;
+            gap: 48px;
+        }
+        .col-wrapper:last-child {
+            max-width: 720px;
+            align-items: normal;
+            gap: 10px;
+            @include medium-screen {
+                max-width: 100%;
+            }
+        }
+        .col-wrapper {
+            max-width: 436px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            .h2-48pt {
+                margin-bottom: 24px;
+                @include medium-screen {
+                    margin-bottom: 12px;
+                }
+            }
+            p {
+                margin-bottom: 32px;
+                @include medium-screen {
+                    margin-bottom: 24px;
+                }
+                .link {
+                    font-size: 18px;
+                    font-weight: 600;
+                    @include medium-screen {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
