@@ -1,3 +1,5 @@
+@import "../../../../assets/styles/mixins";
+
 .logo-wrapper {
     height: 38px;
     width: 130px;
@@ -5,6 +7,12 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    &.header-logo {
+        @include small-screen {
+            height: 26px;
+            width: 89px;    
+        }
+    }
     .logo {
         height: 100%;
         width: 100%;

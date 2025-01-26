@@ -1,6 +1,6 @@
 <header class="header-section">
     <div class="container">
-        <app-logo logoType="colored"></app-logo>
+        <app-logo logoType="colored" [isHeaderLogo]="true"></app-logo>
         <nav class="main-menu">
             <ul class="main-menu__list">
                 <li class="main-menu__list__item">
@@ -24,7 +24,8 @@
             </ul>
             <button 
                 class="btn btn-primary btn-communicate btn-pt20"
-                (click)="navigateAndScroll()"
+                onclick="window.location.href='#contact-form'"
+                (click)="hideMainMenu()" 
             >
                 Jetzt kontaktieren
                 <span></span>
@@ -32,7 +33,7 @@
         </nav>
         <button 
             class="btn btn-primary btn-communicate btn-communicate-small btn-pt20"
-            (click)="navigateAndScroll()"
+            onclick="window.location.href='#contact-form'"
         >
             Jetzt kontaktieren
             <span></span>

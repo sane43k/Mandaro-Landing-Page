@@ -1,5 +1,6 @@
 <div 
     class="logo-wrapper" 
+    [ngClass]="{'header-logo': isHeaderLogo}"
     (click)="navigateToMain()"
 >
     <img 
