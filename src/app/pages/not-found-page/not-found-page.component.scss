@@ -23,12 +23,11 @@
             @include medium-screen {
                 width: 100%;
                 align-items: center;
-                gap: 20px;
             }
             .h1-55pt {
-                font-size: 250px;
+                font-size: calc(120px + 10.5vw);
                 @include medium-screen {
-                    font-size: 120px;
+                    font-size: calc(96px + 7.4vw);
                 }
             }
         }

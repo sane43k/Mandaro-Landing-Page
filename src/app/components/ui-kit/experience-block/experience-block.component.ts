@@ -18,7 +18,7 @@ export class ExperienceBlockComponent {
   @Input() isOrangeBlock: boolean = false;
   @Input() imgSrc: string = '';
   @Input() imgAlt: string = '';
-  @Input() title: string = '';
+  @Input() header: string = '';
   @Input() description: string = '';
   @Input() tags: string[] = [];
 }

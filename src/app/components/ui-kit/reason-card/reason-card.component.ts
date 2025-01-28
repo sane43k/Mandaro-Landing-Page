@@ -9,7 +9,7 @@ import { Component, Input } from '@angular/core';
 })
 
 export class ReasonCardComponent {
-  @Input() title: string = '';
+  @Input() header: string = '';
   @Input() description: string = '';
   @Input() iconSrc: string = '';
   @Input() iconAlt: string = '';

@@ -59,6 +59,30 @@
                     flex-direction: column;
                     align-items: flex-start;
                 }
+                &__item {
+                    .link {
+                        position: relative;
+                        &::after {
+                            content: '';
+                            height: 1px;
+                            width: 100%;
+                            background-color: $neutral-6;
+                            position: absolute;
+                            bottom: 3px;
+                            left: 0;
+                            transform: scaleX(0);
+                            transform-origin: right;
+                            transition: transform .3s ease;
+                        }
+                        &:hover {
+                            text-decoration: none;
+                            &::after {
+                                transform: scaleX(1);
+                                transform-origin: left;
+                            }
+                        }
+                    }
+                }
             }
             .btn {
                 display: none;
