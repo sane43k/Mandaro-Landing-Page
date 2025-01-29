@@ -24,6 +24,16 @@
       {
         "image-alt": "off"
       }
+    ],
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "scrollbar-width",
+          "scrollbar-width: auto",
+          "scrollbar-color"
+        ]
+      }
     ]
   }
 }
